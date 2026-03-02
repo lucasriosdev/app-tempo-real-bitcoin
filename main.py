@@ -9,6 +9,7 @@ co2 = "#6f9fbd"  # azul / blue
 
 fundo = "#484f60" #background
 
+# criando a janela do app
 janela = Tk()
 janela.title('')
 janela.geometry('320x350')
