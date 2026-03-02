@@ -31,16 +31,42 @@ frame_baixo = Frame(janela, width=320, height=300, bg=fundo, pady=0, padx=0, rel
 frame_baixo.grid(row=2, column=0, sticky=NW)
 
 
-api_link = 'https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=USD%2CEUR%2CAOA%2CBRL'
+
+# função para pegar dados
+
+def info():
+	api_link = 'https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=USD%2CEUR%2CAOA%2CBRL'
+
+	# -- Pegando os dados da API (HTTP REQUEST) --------
+	response = requests.get(api_link)
+
+	# -- Convertendo os dados para JSON --------
+	dados = response.json()
+
+	# -- Valor em USD
+	valor_usd = float(dados['USD'])
+	valor_formatado_usd = "$ {:,.3f}".format(valor_usd)
+	l_p_usd['text'] = 'Em Dólares é: $ '+ valor_formatado_usd
+
+ 	# -- Valor em Euro
+	valor_euro = float(dados['EUR'])
+	valor_formatado_euro = "€ {:,.3f}".format(valor_euro)
+	l_p_euro['text'] = 'Em Euros é: € '+ valor_formatado_euro
 
 
+	# -- Valor em Reais
+	valor_reais = float(dados['BRL'])
+	valor_formatado_reais = "R$ {:,.3f}".format(valor_reais)
+	l_p_reais['text'] = 'Em Reais é: R$ '+valor_formatado_reais
 
 
+	# -- Valor em AOA
+	valor_kz = float(dados['AOA'])
+	valor_formatado_kz = "Kz {:,.3f}".format(valor_kz)
+	l_p_kz['text'] = 'Em Kwanzas é: AOA '+ valor_formatado_kz
 
 
-
-
-
+	frame_baixo.after(1000, info)
 
 
 # Configurando o frame de cima --------
@@ -55,18 +81,20 @@ l_nome = Label(frame_cima,text='Bitcoin Price Tracker', bg=co1, fg=co2, relief=F
 l_nome.place(x=50, y=5)
 
 # Configurando o frame de baixo --------
-l_p_usd = Label(frame_baixo,text='$ 10,000,00', width=14, bg=fundo, fg=co1, relief=FLAT, anchor='center', font=('Arial 12'))
-l_p_usd.place(x=0, y=50)
+l_p_usd = Label(frame_baixo,text='', bg=fundo, fg=co1, relief=FLAT, anchor='center', font=('Arial 12'))
+l_p_usd.place(x=10, y=50)
 
-l_p_euro = Label(frame_baixo,text='€ 10,000,00', width=14, bg=fundo, fg=co1, relief=FLAT, anchor='center', font=('Arial 12'))
+l_p_euro = Label(frame_baixo,text='',bg=fundo, fg=co1, relief=FLAT, anchor='center', font=('Arial 12'))
 l_p_euro.place(x=10, y=130)
 
-l_p_reais = Label(frame_baixo,text='R$ 10,000,00', width=14, bg=fundo, fg=co1, relief=FLAT, anchor='center', font=('Arial 12'))
+l_p_reais = Label(frame_baixo,text='', bg=fundo, fg=co1, relief=FLAT, anchor='center', font=('Arial 12'))
 l_p_reais.place(x=10, y=160)
 
-l_p_kz = Label(frame_baixo,text='Kz 10,000,00', width=14, bg=fundo, fg=co1, relief=FLAT, anchor='center', font=('Arial 12'))
+l_p_kz = Label(frame_baixo,text='', bg=fundo, fg=co1, relief=FLAT, anchor='center', font=('Arial 12'))
 l_p_kz.place(x=10, y=190)
 
 
+
+info()
 
 janela.mainloop()
