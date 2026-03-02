@@ -28,10 +28,14 @@ frame_baixo.grid(row=2, column=0, sticky=NW)
 
 # Configurando o frame de cima --------
 imagem = Image.open('images/bitcoin_94576.png')
-imagem = imagem.resize((30,30), Image.ANTIALIAS)
+imagem = imagem.resize((30,30), Image.LANCZOS)
 imagem = ImageTk.PhotoImage(imagem)
 
+l_icon = Label(frame_cima, image=imagem, compound=LEFT, bg=co1, relief=FLAT)
+l_icon.place(x=10, y=10)
 
+l_nome = Label(frame_cima,text='Bitcoin Price Tracker', bg=co1, fg=co2, relief=FLAT, anchor='center', font=('Arial 20'))
+l_nome.place(x=50, y=5)
 
 
 janela.mainloop()
