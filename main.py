@@ -2,6 +2,10 @@ from tkinter import *
 from tkinter import ttk
 from PIL import ImageTk, Image
 
+# importando -------
+import requests
+import json
+
 # cores -------
 
 co0 = "#444466"  # preta / black
@@ -25,6 +29,19 @@ frame_cima.grid(row=1, column=0)
 
 frame_baixo = Frame(janela, width=320, height=300, bg=fundo, pady=0, padx=0, relief='flat')
 frame_baixo.grid(row=2, column=0, sticky=NW)
+
+
+api_link = 'https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=USD%2CEUR%2CAOA%2CBRL'
+
+
+
+
+
+
+
+
+
+
 
 # Configurando o frame de cima --------
 imagem = Image.open('images/bitcoin_94576.png')
