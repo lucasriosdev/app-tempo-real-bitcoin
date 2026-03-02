@@ -15,4 +15,13 @@ janela.title('')
 janela.geometry('320x350')
 janela.configure(bg=fundo)
 
+ttk.Separator(janela, orient=HORIZONTAL).grid(row=0, columnspan=1, ipadx=157)
+
+frame_cima = Frame(janela, width=320, height=50, bg=co1, pady=0, padx=0, relief='flat')
+frame_cima.grid(row=1, column=0)
+
+frame_baixo = Frame(janela, width=320, height=300, bg=fundo, pady=0, padx=0, relief='flat')
+frame_baixo.grid(row=2, column=0, sticky=NW)
+
+
 janela.mainloop()
