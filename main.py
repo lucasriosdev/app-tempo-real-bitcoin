@@ -38,17 +38,17 @@ l_nome = Label(frame_cima,text='Bitcoin Price Tracker', bg=co1, fg=co2, relief=F
 l_nome.place(x=50, y=5)
 
 # Configurando o frame de baixo --------
-l_p_usd = Label(frame_baixo,text='$ 10,000,00', width=14, bg=fundo, fg=co1, relief=FLAT, anchor='center', font=('Arial 20'))
+l_p_usd = Label(frame_baixo,text='$ 10,000,00', width=14, bg=fundo, fg=co1, relief=FLAT, anchor='center', font=('Arial 12'))
 l_p_usd.place(x=0, y=50)
 
-l_p_euro = Label(frame_baixo,text='$ 10,000,00', width=14, bg=fundo, fg=co1, relief=FLAT, anchor='center', font=('Arial 20'))
-l_p_euro.place(x=0, y=50)
+l_p_euro = Label(frame_baixo,text='€ 10,000,00', width=14, bg=fundo, fg=co1, relief=FLAT, anchor='center', font=('Arial 12'))
+l_p_euro.place(x=10, y=130)
 
-l_p_reais = Label(frame_baixo,text='R$ 10,000,00', width=14, bg=fundo, fg=co1, relief=FLAT, anchor='center', font=('Arial 20'))
-l_p_reais.place(x=0, y=100)
+l_p_reais = Label(frame_baixo,text='R$ 10,000,00', width=14, bg=fundo, fg=co1, relief=FLAT, anchor='center', font=('Arial 12'))
+l_p_reais.place(x=10, y=160)
 
-l_p_kz = Label(frame_baixo,text='$ 10,000,00', width=14, bg=fundo, fg=co1, relief=FLAT, anchor='center', font=('Arial 20'))
-l_p_kz.place(x=0, y=100)
+l_p_kz = Label(frame_baixo,text='Kz 10,000,00', width=14, bg=fundo, fg=co1, relief=FLAT, anchor='center', font=('Arial 12'))
+l_p_kz.place(x=10, y=190)
 
 
 
