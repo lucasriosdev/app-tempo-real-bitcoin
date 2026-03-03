@@ -18,3 +18,8 @@ Um aplicativo desktop simples desenvolvido em **Python** que monitora a cotaçã
 1. Clone o repositório:
    ```bash
    git clone [https://github.com/lucasriosdev/app-tempo-real-bitcoin.git](https://github.com/lucasriosdev/app-tempo-real-bitcoin.git)
+
+## 2. Instale as dependências necessárias e execute o script principal
+```bash
+pip install requests pillow
+python main.py
